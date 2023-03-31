@@ -1,5 +1,5 @@
 {% set name = "gpkgstatus" %}
-{% set version = "2.0.5" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 40c3a094b717b0b04593645b85acdab45d832a2a83547188335fe7a38762b15e
+  sha256: bc0c56a90b3fbfa2be5303665a862be707746702996e96f07746ab4dab506e35
 
 build:
   entry_points:
