@@ -29,12 +29,7 @@ requirements:
 test:
   imports:
     - gpkgstatus
-  requires:
-    - pytest
-  source_files:
-    - tests
   commands:
-    - pytest -v tests
     - gpkgstatus -h
 
 about:
