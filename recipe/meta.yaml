@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 64199355243befd9726a52ed809fd256e6ad50fd998b820ca9fbf52bd90cd0af
 
 build:
@@ -14,19 +14,21 @@ build:
     - gpkgstatus = gpkgstatus.entrypoint:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - requests ==2.28.2
     - termcolor ==2.2.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - gpkgstatus
   commands:
